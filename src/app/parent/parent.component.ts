@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.scss']
 })
 export class ParentComponent implements OnInit {
-
+  recievedTextChild1
+  message="init"
   constructor() { }
 
   ngOnInit(): void {
