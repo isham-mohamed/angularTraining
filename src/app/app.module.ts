@@ -1,4 +1,4 @@
-import { Device } from './device.service';
+import { DeviceService } from './device.service';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -19,7 +19,7 @@ import { Home2Component } from './home2/home2.component';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [Device],
+  providers: [DeviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-export class Device{
+export class DeviceService{
     getDeviceList(){
         return ['nokia','samsung','apple']
     }
