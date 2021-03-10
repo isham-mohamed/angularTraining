@@ -17,7 +17,7 @@ import { Child2Component } from './child2/child2.component';
 
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     FormsModule
   ],

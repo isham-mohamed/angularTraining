@@ -5,12 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './child2.component.html',
   styleUrls: ['./child2.component.scss']
 })
-export class Child2Component implements OnInit {
+export class Child2Component{
   @Input('fromParent') recievedTextParent
-  recievedTextChild
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

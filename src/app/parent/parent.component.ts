@@ -9,14 +9,18 @@ import { Child1Component } from '../child1/child1.component';
 })
 export class ParentComponent implements AfterViewInit {
   @ViewChild(Child1Component) child1
-  recievedTextChild1
-  message="init"
+  recievedTextFromChild
+  message=""
   constructor() { }
 
   ngAfterViewInit(): void {
-    this.recievedTextChild1=this.child1.message
+    this.recievedTextFromChild=this.child1.message
   }
 
+  receiveMessage(message) {
+    this.recievedTextFromChild = message
+  }
+  
   sendToChilren(newMessage){
     this.message=newMessage
   }

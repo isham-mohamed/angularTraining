@@ -3,10 +3,10 @@
         <h2>Parent</h2>
         <input type="text" #text [value]="message" class="form-control">
         <button class="btn btn-primary" (click)="sendToChilren(text.value)"> send to children</button>
-        <p>Recieved text from child1={{recievedTextChild1}}</p>
+        <p>Recieved text from child1={{recievedTextFromChild}}</p>
     </div>
     <div class="row">
-        <app-child1 class="child col" [fromParent]="message" ></app-child1>
+        <app-child1 class="child col" (messageEventToParent)="receiveMessage($event)" [recievedTextParent]="message" ></app-child1>
         <app-child2 class="child col" [fromParent]="message"></app-child2>
     </div>    
 </div>
