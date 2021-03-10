@@ -1,5 +1,24 @@
-export class Device{
+export class DeviceService{
     getDeviceList(){
-        return ['nokia','samsung','apple']
+        let deviceDetails=[{
+            name:'Oneplus',
+            price:52000,
+            available:true,
+        },
+        {
+            name:'Apple',
+            price:60000,
+            available:false,
+        },
+        {
+            name:'Nokia',
+            price:5000,
+            available:false,
+        },{
+            name:'Redmi',
+            price:1600,
+            available:true,
+        }]
+        return deviceDetails
     }
 }
