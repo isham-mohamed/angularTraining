@@ -2,9 +2,15 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  template: `
+    <button [id]="id" class="button" [style.backgroundColor]="'red'">Button</button>
+    <input >
+  `
 })
 export class AppComponent {
-  title = 'angularTraining';
+  isActive=false
+  id="btn"
+  imgSrc="https://images.freeimages.com/images/large-previews/867/volcanic-mt-ngauruhoe-1378772.jpg"
+  
 }
