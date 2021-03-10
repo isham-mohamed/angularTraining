@@ -6,16 +6,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './child1.component.html',
   styleUrls: ['./child1.component.scss']
 })
-export class Child1Component implements OnInit {
-  @Input() recievedTextParent
-  @Output() messageEventToParent = new EventEmitter<string>();
-  message="Child 1"
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class Child1Component {
   
-  toparent(newMessage){
-    this.messageEventToParent.emit(newMessage)
-  }
 }

@@ -1,12 +1,12 @@
 <div class="container">
     <div class="row parent">
         <h2>Parent</h2>
-        <input type="text" #text [value]="message" class="form-control">
-        <button class="btn btn-primary" (click)="sendToChilren(text.value)"> send to children</button>
-        <p>Recieved text from child1={{recievedTextFromChild}}</p>
+        <input type="text" #text  class="form-control">
+        <button class="btn btn-primary" > send to children</button>
+        <p>Recieved text from child1=</p>
     </div>
     <div class="row">
-        <app-child1 class="child col" (messageEventToParent)="receiveMessage($event)" [recievedTextParent]="message" ></app-child1>
-        <app-child2 class="child col" [fromParent]="message"></app-child2>
+        <app-child1 class="child col" ></app-child1>
+        <app-child2 class="child col" ></app-child2>
     </div>    
 </div>
