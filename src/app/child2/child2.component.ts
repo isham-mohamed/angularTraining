@@ -6,5 +6,5 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./child2.component.scss']
 })
 export class Child2Component{
-  constructor() { }
+  @Input() message
 }
