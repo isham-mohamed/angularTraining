@@ -1,0 +1,27 @@
+<h2>{{title}}</h2>
+<ul>
+    <li *ngFor="let device of deviceDetails">
+        <div>Name:{{device.name}}</div>
+        <div>Price:{{device.price}}</div>
+        <div *ngIf="device.available;then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+                <div [style.background-color]="'green'"> Available </div>
+            </ng-template>
+            <ng-template #elseBlock>
+                <div [style.background-color]="'red'"> Not Available </div>
+            </ng-template>
+    </li>
+</ul>
+
+<h1> Alternative Using ngSwitch</h1>
+<ul>
+    <li *ngFor="let device of deviceDetails">
+        <div>Name:{{device.name}}</div>
+        <div>Price:{{device.price}}</div>
+        <div [ngSwitch]="device.available">
+            <div *ngSwitchCase="true" [style.background-color]="'green'">Availbe</div>
+            <div *ngSwitchCase="false" [style.background-color]="'red'">Not Available</div>
+            <div *ngSwitchDefault [style.background-color]="'orange'">No DATA Available</div>
+        </div> 
+    </li>
+</ul>

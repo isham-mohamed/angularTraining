@@ -1,3 +1,5 @@
+import { NONE_TYPE } from "@angular/compiler"
+
 export class DeviceService{
     getDeviceList(){
         let deviceDetails=[{
@@ -17,7 +19,7 @@ export class DeviceService{
         },{
             name:'Redmi',
             price:1600,
-            available:true,
+            available:null
         }]
         return deviceDetails
     }
