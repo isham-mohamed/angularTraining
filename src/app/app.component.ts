@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsernameValidator } from './custom-validator.validator';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angularTraining';
+  title = 'Rective Forms';
+  form = new FormGroup({
+    username:new FormControl('',
+    //normal validator
+    [
+      Validators.required,
+      Validators.minLength(5),
+      UsernameValidator.cannotContainSpace,
+    ],
+    //async validaotrs
+    UsernameValidator.uniqueUserName
+    ),
+    password:new FormControl()
+  });
+
+  logForm(){
+    console.log(this.form);
+  }
+
 }
