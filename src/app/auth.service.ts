@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
   login({username,password}){
-    if(username==="isham" && password==="123")
+    if(username==="isham123" && password==="123")
       return true
     return false
   }
