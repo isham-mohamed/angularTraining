@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularTraining';
-  canSave=true
-  toggleSave(){
-    this.canSave=!this.canSave
-  }
 }
