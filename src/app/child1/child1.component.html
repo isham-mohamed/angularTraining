@@ -1,4 +1,4 @@
 <p>Child1</p>
-<input #text type="text" class="form-control">
-<button class="btn btn-primary" (click)="saveValue(text.value)" > send to parent</button>
-<p>Recieved text from parent={{message}}</p>
+<input #text type="text" class="form-control" (keyup)="saveValue(text.value)">
+<button class="btn btn-primary" (click)="emitMessage(text.value)" > send to parent </button>
+<p>Recieved text from parent={{messageFromParent}}</p>
