@@ -8,7 +8,7 @@ export class UsernameValidator {
         return null;
     }
 
-    //ascyn validator
+    //async validator
     static uniqueUserName(control: AbstractControl) : Promise<ValidationErrors | null> {
         return new Promise((resolve,reject)=>{
             setTimeout(()=>{
