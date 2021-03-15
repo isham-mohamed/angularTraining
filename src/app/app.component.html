@@ -1,5 +1,5 @@
 <h2>{{title}}</h2>
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="login()">
     <div class="form-group">
       <label for="Email1">Email address</label>
       <input type="email" class="form-control" id="Email1" placeholder="Enter email" formControlName="username">
@@ -14,5 +14,5 @@
       <label for="Password1">Password</label>
       <input type="password" class="form-control" id="Password1" placeholder="Password" formControlName="password">
     </div>
-    <button type="submit" class="btn btn-primary" (click)="logForm()">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>

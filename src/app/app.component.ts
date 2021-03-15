@@ -23,7 +23,7 @@ export class AppComponent {
     password:new FormControl()
   });
 
-  logForm(){
+  login(){
     console.log(this.form);
   }
 
