@@ -14,9 +14,10 @@ export class ParentComponent {
 
   // USING VIEW CHILD
   @ViewChild(Child1Component) childAccess
-    ngAfterViewInit(){
+  getDataFromChild(){
     this.messageFromChild=this.childAccess.messageToParent
   }
+  
 
   sendMessage(message){
     this.messagetoChild=message

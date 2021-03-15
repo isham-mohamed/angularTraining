@@ -3,10 +3,14 @@
         <h2>Parent</h2>
         <input type="text" [(ngModel)]="messagetoChild"#text class="form-control ">
         <button class="btn btn-primary" > send to children</button>
+        <button class="btn btn-primary" (click)="getDataFromChild()" > Get Data From Child</button>
         <p>Recieved text from child1={{messageFromChild}}</p>
     </div>
     <div class="row">
-        <app-child1 class="child col" [message]="messagetoChild" (messageEvent)="onEventMessage($event)" ></app-child1>
+        <app-child1 class="child col" 
+            [messageFromParent]="messagetoChild"
+            (messageEvent)="onEventMessage($event)" >
+        </app-child1>
         <app-child2 class="child col" [message]="messagetoChild"></app-child2>
     </div>    
 </div>

@@ -8,13 +8,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class Child1Component {
   messageToParent="hai"
+  
+  saveValue(message){    
+    this.messageToParent=message
+  }
 
   //To recieve data from parent
-  @Input() message
+  @Input() messageFromParent
 
   //to send data to parent
   @Output() messageEvent = new EventEmitter<string>()
-  saveValue(message){    
-    this.messageEvent.emit(message)
+  emitMessage(){    
+    this.messageEvent.emit(this.messageToParent)
   }
 }
