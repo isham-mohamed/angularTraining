@@ -7,11 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./child1.component.scss']
 })
 export class Child1Component {
-  messageToParent="hai"
-  
-  saveValue(message){    
-    this.messageToParent=message
-  }
+  messageToParent="" 
 
   //To recieve data from parent
   @Input() messageFromParent
