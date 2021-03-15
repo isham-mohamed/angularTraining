@@ -1,3 +1,4 @@
+import { FormArray, FormGroup, FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angularTraining';
+  title = 'Forms Array';
+  form= new FormGroup({
+    questions:new FormArray([])
+  })
+  
+  get questions(){
+    return this.form.get('questions') as FormArray
+  }
+
+  addqs(qs:HTMLInputElement){
+    this.questions.push(new FormControl(qs.value))
+  }
+  
+  removeqs(qs:FormControl){
+    let index = this.questions.controls.indexOf(qs)
+    this.questions.removeAt(index)
+  }
+
+
 }

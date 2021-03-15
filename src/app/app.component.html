@@ -1,1 +1,9 @@
 <h2>{{title}}</h2>
+<form [formGroup]="form">
+    <input #qs type="text" class="form-control"
+    (keyup.enter)="addqs(qs);qs.value=''">
+<ul class="list-group">
+    <li *ngFor="let qs of questions.controls"
+    class="list-group-item" (click)="removeqs(qs)">{{qs.value}}</li>
+</ul>
+</form>
