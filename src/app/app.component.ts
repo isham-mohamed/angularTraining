@@ -17,7 +17,7 @@ export class AppComponent {
     [
       Validators.required,
       Validators.minLength(5),
-      UsernameValidator.cannotContainSpace,
+      UsernameValidator.cannotContainSpace, //custom validator
     ],
     //async validaotrs
     UsernameValidator.uniqueUserName
