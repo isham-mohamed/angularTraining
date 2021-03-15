@@ -1,6 +1,7 @@
 <h2>{{title}}</h2>
 <form [formGroup]="form" (ngSubmit)="login()">
     <div class="form-group">
+      <div class="alert alert-danger" *ngIf="form.errors">Invalid Login</div> 
       <label for="Email1">Email address</label>
       <input type="email" class="form-control" id="Email1" placeholder="Enter email" formControlName="username">
       <div *ngIf="form.get('username').invalid && form.get('username').touched">

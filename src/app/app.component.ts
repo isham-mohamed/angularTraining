@@ -24,6 +24,7 @@ export class AppComponent {
   });
 
   login(){
+    this.form.setErrors({InvalidLogin:true})
     console.log(this.form);
   }
 
