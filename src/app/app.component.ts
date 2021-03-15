@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsernameValidator } from './custom-validator.validator';
@@ -9,6 +10,7 @@ import { UsernameValidator } from './custom-validator.validator';
 })
 export class AppComponent {
   title = 'Rective Forms';
+  constructor(public authService:AuthService){}
   form = new FormGroup({
     username:new FormControl('',
     //normal validator
@@ -24,7 +26,10 @@ export class AppComponent {
   });
 
   login(){
-    this.form.setErrors({InvalidLogin:true})
+    let isValid =this.authService.login(this.form.value)
+    if (!isValid){
+      this.form.setErrors({InvalidLogin:true})
+    }
     console.log(this.form);
   }
 
