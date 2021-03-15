@@ -2,17 +2,17 @@
 <form [formGroup]="form" (ngSubmit)="login()">
     <div class="form-group">
       <label for="Email1">Email address</label>
-      <input type="email" class="form-control" id="Email1" placeholder="Enter email" formControlName="username">
-      <div *ngIf="form.get('username').invalid && form.get('username').touched">
-         <div *ngIf="form.get('username').errors.minlength" class="alert alert-danger" >required lenght 5</div>
-         <div *ngIf="form.get('username').errors.required" class="alert alert-danger" >UserName Required</div>
-         <div *ngIf="form.get('username').errors.cannotContainSpace" class="alert alert-danger" >Cannot Contain Space</div>
-         <div *ngIf="form.get('username').errors.uniqueUserName" class="alert alert-danger" >username already taken</div>
-      </div>
+      <input type="email" class="form-control" id="Email1" placeholder="Enter email" formControlName="username" >
+    </div>
+    <div class="form-group" formGroupName="address">
+      <label for="housename">house name</label>
+      <input type="text" class="form-control" id="housename" placeholder="House Name" formControlName="houseName" >
+      <label for="pincode">Pincode</label>
+      <input type="text" class="form-control" id="pincode" placeholder="Enter PinCode" formControlName="pincode" >
     </div>
     <div class="form-group">
       <label for="Password1">Password</label>
-      <input type="password" class="form-control" id="Password1" placeholder="Password" formControlName="password">
+      <input type="password" class="form-control" id="Password1" placeholder="Password" formControlName="password" >
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

@@ -1,6 +1,6 @@
+import { AuthService } from './auth.service';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UsernameValidator } from './custom-validator.validator';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,22 +9,21 @@ import { UsernameValidator } from './custom-validator.validator';
 })
 export class AppComponent {
   title = 'Rective Forms';
-  form = new FormGroup({
-    username:new FormControl('',
-    //normal validator
-    [
-      Validators.required,
-      Validators.minLength(5),
-      UsernameValidator.cannotContainSpace,
-    ],
-    //async validaotrs
-    UsernameValidator.uniqueUserName
-    ),
-    password:new FormControl()
-  });
+
+  addressForm = new FormGroup({
+    houseName:new FormControl(),
+    pincode:new FormControl()
+  })
+
+  form= new FormGroup({
+    username: new FormControl(),
+    password : new FormControl(),
+    address:this.addressForm
+  })
+
+  
 
   login(){
-    console.log(this.form);
+    console.log(this.form.value);
   }
-
 }
