@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Http Services';
  
-  devices=[]
+  devices
 
   form=new FormGroup({
     id:new FormControl(),
@@ -23,23 +23,52 @@ export class AppComponent {
 
   sendData(){
     this.deviceService.postData(this.form.value)
+    .subscribe(response=>{
+      console.log(response);
+    }, 
+    error => {
+      alert('an unexpected error')
+      console.log(error);
+    })
     this.devices.push(this.form.value)
   }
 
   getData(){    
-    this.devices=this.deviceService.getData()
+    this.deviceService.getData()
+    .subscribe((response:Response)=> {
+       this.devices=response
+    }, 
+    error => {
+      alert('an unexpected error')
+      console.log(error);
+    })
   }
   
   updateDevice(device){
     device['deviceName']="device name Updated"
     // this.deviceService.patchData(device)
     this.deviceService.putData(device)
+    .subscribe(response => {
+      console.log(response);
+    }, 
+    error => {
+      alert('an unexpected error')
+      console.log(error);
+    })
   }
 
   deleteDevice(device){
     let index = this.devices.indexOf(device)
     this.devices.splice(index,1)
     this.deviceService.DeleteData(device)
+    .subscribe(response => {
+      console.log(response);
+    }, 
+    (error:Response) => {
+      if(error.status===404)
+        alert('Already deleted')
+      console.log(error);
+    })
   }
   
 }

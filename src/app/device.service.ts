@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -12,39 +11,25 @@ export class DeviceService {
   }
   
   getData(){
-    this.http.get(this.url)
-    .subscribe((response:Response)=> {
-     this.devices=response
-    })
-    return this.devices
+    return this.http.get(this.url)
+    
   }
 
   postData(data){
-    this.http.post(this.url,data)
-    .subscribe(response=>{
-      console.log(response);
-    })
+    return this.http.post(this.url,data)
+    
   }
 
   patchData(device){
-    this.http.patch(this.url+'/'+device.id,{deviceName:device.deviceName})
-      .subscribe(response => {
-        console.log(response);
-        
-      })
+    return this.http.patch(this.url+'/'+device.id,{deviceName:device.deviceName})
+      
   }
 
   putData(device){
-    this.http.put(this.url+'/'+device.id,device)
-      .subscribe(response => {
-        console.log(response);
-      })
+    return this.http.put(this.url+'/'+device.id,device)
   }
 
   DeleteData(device){
-    this.http.delete(this.url+'/'+device.id)
-      .subscribe(response => {
-        console.log(response);
-      })
-    }
+    return this.http.delete(this.url+'/'+device.id)
+  } 
 }
