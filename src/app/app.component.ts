@@ -24,6 +24,11 @@ export class AppComponent {
     let index = this.questions.controls.indexOf(qs)
     this.questions.removeAt(index)
   }
+  
+  log(){
+    console.log(this.form.value);
+    
+  }
 
 
 }
