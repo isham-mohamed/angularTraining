@@ -1,4 +1,3 @@
-import { log } from 'node:console';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';

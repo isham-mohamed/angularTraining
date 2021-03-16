@@ -21,7 +21,7 @@ const routes: Routes = [
     component:DevicesComponent
   },
   {
-    path:'device/:diviceId',
+    path:'device/:deviceId',
     component:DeviceDetailsComponent
   },
   {

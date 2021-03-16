@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DeviceService } from '../device.service';
 
 @Component({
@@ -16,9 +17,21 @@ export class DeviceDetailsComponent {
 
   
 
-  constructor(private deviceService:DeviceService){
-    this.getData('1')
+  constructor(
+    private router:Router,
+    private deviceService:DeviceService,
+    private route:ActivatedRoute){
   }
+
+  ngOnInit(): void {
+    let id
+    this.route.paramMap.subscribe(params=>{
+      id = +params.get('deviceId')
+    })
+    console.log(id);
+    
+    this.getData(id)  
+}
 
   getData(deviceId){    
     this.deviceService.getDevice(deviceId)
@@ -56,6 +69,7 @@ export class DeviceDetailsComponent {
         alert('Already deleted')
       console.log(error);
     })
+    this.router.navigate(['/device'])
   }
   
   toggleUpdate(){
