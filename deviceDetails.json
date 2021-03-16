@@ -1,0 +1,24 @@
+{
+  "Devices": [
+    {
+      "id": "1",
+      "deviceName": "7t",
+      "companyName": "oneplus"
+    },
+    {
+      "id": "2",
+      "deviceName": "device name Updated",
+      "companyName": "apple"
+    },
+    {
+      "id": "3",
+      "deviceName": "galaxy",
+      "companyName": "samsung"
+    },
+    {
+      "id": "4",
+      "deviceName": "note 9",
+      "companyName": "redmi"
+    }
+  ]
+}
