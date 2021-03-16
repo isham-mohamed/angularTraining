@@ -8,6 +8,8 @@ import { DeviceDetailsComponent } from './device-details/device-details.componen
 import { DevicesComponent } from './devices/devices.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CompaniesComponent } from './companies/companies.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { HomeComponent } from './home/home.component';
     DevicesComponent,
     LoginComponent,
     HomeComponent,
+    NavbarComponent,
+    CompaniesComponent,
   ],
   imports: [
     BrowserModule,

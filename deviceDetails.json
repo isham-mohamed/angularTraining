@@ -2,7 +2,7 @@
   "Devices": [
     {
       "id": "1",
-      "deviceName": "7t",
+      "deviceName": "6",
       "companyName": "oneplus"
     },
     {
@@ -18,6 +18,16 @@
     {
       "id": "123",
       "deviceName": "asd",
+      "companyName": "qwe"
+    },
+    {
+      "id": "101",
+      "deviceName": "iphone",
+      "companyName": "asd"
+    },
+    {
+      "id": "103",
+      "deviceName": "qwe",
       "companyName": "qwe"
     }
   ]

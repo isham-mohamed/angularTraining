@@ -9,35 +9,21 @@ import { DeviceService } from '../device.service';
 })
 export class DeviceDetailsComponent {
 
-  title = 'Http Services';
+  title = 'Device Details';
  
-  devices
+  device
+  update=false
 
-  form=new FormGroup({
-    id:new FormControl(),
-    deviceName: new FormControl(),
-    companyName: new FormControl()
-  });
+  
 
   constructor(private deviceService:DeviceService){
+    this.getData('1')
   }
 
-  sendData(){
-    this.deviceService.postData(this.form.value)
-    .subscribe(response=>{
-      console.log(response);
-    }, 
-    error => {
-      alert('an unexpected error')
-      console.log(error);
-    })
-    this.devices.push(this.form.value)
-  }
-
-  getData(){    
-    this.deviceService.getData()
+  getData(deviceId){    
+    this.deviceService.getDevice(deviceId)
     .subscribe((response:Response)=> {
-       this.devices=response
+       this.device=response
     }, 
     error => {
       alert('an unexpected error')
@@ -45,23 +31,23 @@ export class DeviceDetailsComponent {
     })
   }
   
-  updateDevice(device){
-    device['deviceName']="device name Updated"
-    // this.deviceService.patchData(device)
-    this.deviceService.putData(device)
+  updateDevice(newName){
+    let oldName=this.device['deviceName']
+    this.device['deviceName']=newName
+    this.deviceService.patchData(this.device)
     .subscribe(response => {
       console.log(response);
     }, 
     error => {
       alert('an unexpected error')
+      this.device['deviceName']=oldName
       console.log(error);
     })
+    this.toggleUpdate()
   }
 
-  deleteDevice(device){
-    let index = this.devices.indexOf(device)
-    this.devices.splice(index,1)
-    this.deviceService.DeleteData(device)
+  deleteDevice(){
+    this.deviceService.DeleteData(this.device)
     .subscribe(response => {
       console.log(response);
     }, 
@@ -72,5 +58,7 @@ export class DeviceDetailsComponent {
     })
   }
   
-
+  toggleUpdate(){
+    this.update=!this.update
+  }
 }

@@ -12,7 +12,10 @@ export class DeviceService {
   
   getData(){
     return this.http.get(this.url)
-    
+  }
+
+  getDevice(deviceId){
+    return this.http.get(this.url+'/'+deviceId)
   }
 
   postData(data){
