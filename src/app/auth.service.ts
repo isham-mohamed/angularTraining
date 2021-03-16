@@ -19,8 +19,10 @@ export class AuthService {
 
   login(userCredentials):{username,password,admin}|Boolean{   
     for(let user of this.users){
-      if (user.username===userCredentials.username && user.password===userCredentials.password)
-            return user
+      if (user.username===userCredentials.username && user.password===userCredentials.password){
+        localStorage.setItem('user',user.toString())
+        return true
+      }
     }
     return false
   }

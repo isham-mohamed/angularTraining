@@ -1,7 +1,34 @@
+import { Page404Component } from './page404/page404.component';
+import { CompaniesComponent } from './companies/companies.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DeviceDetailsComponent } from './device-details/device-details.component';
+import { DevicesComponent } from './devices/devices.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:'',
+    component:HomeComponent
+  },
+  {
+    path:'companies',
+    component:CompaniesComponent
+  },
+  {
+    path:'device',
+    component:DevicesComponent
+  },
+  {
+    path:'device/:diviceId',
+    component:DeviceDetailsComponent
+  },
+  {
+    path:'**',
+    component:Page404Component
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

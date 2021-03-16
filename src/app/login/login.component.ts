@@ -23,10 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(userCredentials){ 
-    let user=this.authService.login(userCredentials)
-    console.log(user);
-    
-    if(user){
+    if(this.authService.login(userCredentials)){
       console.log(true);
     }
     else{
