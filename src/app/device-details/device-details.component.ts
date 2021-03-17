@@ -30,8 +30,10 @@ export class DeviceDetailsComponent {
     this.route.paramMap.subscribe(params=>{
       id = +params.get('deviceId')
     })
-    console.log(id);
-    
+    this.route.queryParamMap.subscribe(params=>{
+      console.log(params.get('name'));
+      
+    })
     this.getData(id)  
 }
 

@@ -22,6 +22,6 @@
 
 <ul class="list-group">
     <li class="list-group-item" *ngFor="let device of devices">
-        <a [routerLink]="['/device',device.id]"> {{device.deviceName}}</a>
+        <a [routerLink]="['/device',device.id]" [queryParams]="{'name':'nokia'}"> {{device.deviceName}}</a>
     </li>
 </ul>
