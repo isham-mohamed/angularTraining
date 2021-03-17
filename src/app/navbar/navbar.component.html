@@ -2,7 +2,8 @@
     <div class="container-fluid">
       <a class="navbar-brand" routerLink="">Navbar</a>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="nav nav-pills">
+        <div *ngIf="authService.isLoggedIn()">
+          <ul class="nav nav-pills">
             <li class="nav-item">
               <a class="nav-link" routerLink="/device" routerLinkActive="active">Devices</a>
             </li>
@@ -10,10 +11,14 @@
               <a class="nav-link"  routerLink="/companies" routerLinkActive="active">Companies</a>
             </li>
           </ul>
+        </div>
       </div>
-      <div class="nav nav-pills" style="float: right;">
-        <a class="nav-link" href="#">Logout</a>
-        <span class="navbar-text d-flex">{{name}}</span>
+      <div class="nav nav-pills" style="float: right;" *ngIf="authService.isLoggedIn()">
+        <a class="nav-link" (click)="logout()">Logout</a>
+        <span class="navbar-text d-flex">{{authService.getUser().username}}</span>
+      </div>
+      <div class="nav nav-pills" style="float: right;" *ngIf="!authService.isLoggedIn()">
+        <a class="nav-link" [routerLink]="['/login']">Login</a>
       </div>
     </div>
   </nav>

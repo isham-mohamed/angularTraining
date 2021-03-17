@@ -1,3 +1,4 @@
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -19,6 +20,7 @@ export class DeviceDetailsComponent {
 
   constructor(
     private router:Router,
+    public authService:AuthService,
     private deviceService:DeviceService,
     private route:ActivatedRoute){
   }

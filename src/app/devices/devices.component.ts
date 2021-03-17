@@ -1,3 +1,4 @@
+import { AuthService } from './../auth.service';
 import { DeviceService } from './../device.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -22,7 +23,9 @@ export class DevicesComponent implements OnInit {
     companyName: new FormControl()
   });
   
-  constructor(private deviceService:DeviceService) { }
+  constructor(
+    public authService:AuthService,
+    private deviceService:DeviceService) { }
 
   ngOnInit(): void {
     this.getData()

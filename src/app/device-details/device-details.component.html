@@ -3,8 +3,10 @@
     <li class="list-group-item">
         Name:{{device['deviceName']}} <br>
         Model:{{device['companyName']}}
-        <button class="btn btn-primary" (click)="toggleUpdate()">Update</button>
-        <button class="btn btn-primary" (click)="deleteDevice()">Delete</button>
+        <span *ngIf="authService.isLoggedIn() && authService.getUser().admin">
+            <button class="btn btn-primary" (click)="toggleUpdate()">Update</button>
+            <button class="btn btn-primary" (click)="deleteDevice()">Delete</button>
+    </span>
     </li>
 </ul>
 

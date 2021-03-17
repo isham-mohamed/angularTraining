@@ -20,7 +20,7 @@ export class AuthService {
   login(userCredentials):{username,password,admin}|Boolean{   
     for(let user of this.users){
       if (user.username===userCredentials.username && user.password===userCredentials.password){
-        localStorage.setItem('user',user.toString())
+        localStorage.setItem('user', JSON.stringify(user))
         return true
       }
     }
@@ -28,6 +28,14 @@ export class AuthService {
   }
 
   logout(){
-    
+    localStorage.removeItem('user')
+  }
+
+  isLoggedIn(){
+    return localStorage.getItem('user')
+  }
+
+  getUser(){
+    return JSON.parse(localStorage.getItem('user'))
   }
 }
