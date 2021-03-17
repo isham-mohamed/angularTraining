@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DeviceDetailsComponent } from './device-details/device-details.component';
 import { DevicesComponent } from './devices/devices.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -18,15 +19,18 @@ const routes: Routes = [
   },
   {
     path:'companies',
-    component:CompaniesComponent
+    component:CompaniesComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'device',
-    component:DevicesComponent
+    component:DevicesComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'device/:deviceId',
-    component:DeviceDetailsComponent
+    component:DeviceDetailsComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'**',
