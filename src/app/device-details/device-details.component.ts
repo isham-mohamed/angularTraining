@@ -1,6 +1,5 @@
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DeviceService } from '../device.service';
 
@@ -16,8 +15,6 @@ export class DeviceDetailsComponent {
   device
   update=false
 
-  
-
   constructor(
     private router:Router,
     public authService:AuthService,
@@ -26,16 +23,19 @@ export class DeviceDetailsComponent {
   }
 
   ngOnInit(): void {
+    console.log("component init");
+    
     let id
     this.route.paramMap.subscribe(params=>{
       id = +params.get('deviceId')
+      console.log("by observable"+id);
+      this.getData(id)  
     })
+    console.log("by snapShot"+this.route.snapshot.paramMap.get('deviceId'));
     this.route.queryParamMap.subscribe(params=>{
       console.log(params.get('name'));
-      
     })
-    this.getData(id)  
-}
+  }
 
   getData(deviceId){    
     this.deviceService.getDevice(deviceId)
@@ -78,5 +78,9 @@ export class DeviceDetailsComponent {
   
   toggleUpdate(){
     this.update=!this.update
+  }
+
+  gotoDevice(deviceId){
+    this.router.navigate(['/device',deviceId])
   }
 }

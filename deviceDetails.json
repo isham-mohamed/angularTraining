@@ -2,23 +2,23 @@
   "Devices": [
     {
       "id": "1",
-      "deviceName": "6",
+      "deviceName": "6t",
       "companyName": "oneplus"
     },
     {
-      "id": "101",
-      "deviceName": "iphone",
+      "id": "2",
+      "deviceName": "Iphone X",
       "companyName": "asd"
     },
     {
-      "id": "103",
-      "deviceName": "xperia",
-      "companyName": "qwe"
+      "id": "3",
+      "deviceName": "iphone 11",
+      "companyName": "apple"
     },
     {
-      "id": "15",
-      "deviceName": "iphone 12",
-      "companyName": "apple"
+      "id": "4",
+      "deviceName": "xperia",
+      "companyName": "sony"
     }
   ]
 }

@@ -1,7 +1,7 @@
 <h3>Devices</h3>
-<div *ngIf="authService.isLoggedIn() && authService.getUser().admin">
-    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="toggleForm()">Add Device</button>
-</div>
+    <div *ngIf="authService.getUser().admin">
+        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="toggleForm()">Add Device</button>
+    </div>
 <div *ngIf="addForm">
     <form class="form-inline" [formGroup]="form" (ngSubmit)="sendData()">
         <div class="form-group mb-2">

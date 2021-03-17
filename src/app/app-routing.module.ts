@@ -1,3 +1,5 @@
+import { TestGuard } from './test.guard';
+import { AuthService } from './auth.service';
 import { Page404Component } from './page404/page404.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { HomeComponent } from './home/home.component';
@@ -11,7 +13,7 @@ import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   {
     path:'',
-    component:HomeComponent
+    component:HomeComponent,
   },
   {
     path:'login',
